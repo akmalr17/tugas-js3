@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function total(){
+            let masuk = document.getElementById("jm").value;
+            let keluar = document.getElementById("jk").value;
+            let pulang = keluar - masuk;
+            let bayar = 0;
+            const TA = 3000;
+            const TP = 1000;
+            if(pulang <= 2){
+                bayar = TA;
+            }
+            else{
+                let tambahan = pulang - 2;
+                bayar =  TA + (TP * tambahan);
+            }
+            let akhir = document.getElementById("akhir");
+            akhir.innerHTML = "Totalnya : " + bayar;
+        }
+    </script>
+
+
+    <h3>
+        Menghitung Biaya Parkir
+    </h3>
+
+    <div>
+        Jam Masuk : 
+        <input type="number" value="" id="jm">
+    </div>
+    <br>
+    <div>
+        Jam Keluar :
+        <input type="number" value="" id="jk">
+    </div>
+    <br>
+    <div>
+        <button onclick="total()">Biaya</button>
+    </div>
+    <br>
+    <div>
+        <span id="akhir"></span>
+    </div>
+
+
+
+
+
+
+</body>
+</html>
